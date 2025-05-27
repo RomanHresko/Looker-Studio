@@ -1,10 +1,34 @@
-## Використання SQL інструменту Looker Studio для візуалізації.
-
-Аналіз витрат на рекламні кампанії в Facebook та Google.
-Використання DBeaver та робота з PostgreSQL, підключення коду до Looker Studio для автоматичного оновлення даних.
-Моніторинг: витрат, доходів, переглядів, кліків та лідів в режимі реального часу для прийняття управлінських рішень
-Розрахунок ключових показників ефективності:
-ROI;
-CPM;
-CPC;
-CTR.
+WITH google_facebook AS (SELECT 
+    ad_date,
+    campaign_id,
+    'facebook ads' AS media_source,
+   	spend, 
+   	impressions,
+   	reach, 
+    clicks,
+    leads, 
+    value
+FROM facebook_ads_basic_daily
+UNION
+SELECT 
+    ad_date,
+    campaign_name AS campaign_id,
+    'google ads' AS media_source,
+    spend, 
+    impressions,
+    reach, 
+    clicks,
+    leads, 
+    value
+FROM google_ads_basic_daily gabd)
+SELECT 
+	ad_date, 
+	media_source, 
+	SUM(spend) AS total_spend, 
+	SUM(impressions) AS total_impressions,
+	SUM(reach) AS total_reach, 
+    SUM(clicks) AS total_clicks,
+    SUM(leads) AS total_leads, 
+    SUM(value) AS total_value
+FROM google_facebook
+GROUP BY ad_date, media_source;
