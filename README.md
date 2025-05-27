@@ -10,14 +10,14 @@ CPC;
 CTR.
 
 Ключі показники:
-- CTR (Click-Through Rate): співвідношення кліків до показів.
-- CPC (Cost Per Click): вартість одного кліку.
-- CPM (Cost Per Mille): вартість тисячі показів.
-- ROMI (Return on Marketing Investment): рентабельність інвестицій.
-
-
-
-
+- Ad Spend (Сума витрат): Загальні витрати кампанії.
+- Clicks (Кліки): Кількість взаємодій із рекламою.
+- Impressions (Покази): Загальна кількість переглядів реклами.
+- Value: Сума доходу, отриманого від конверсій.
+- CTR (Click-Through Rate): співвідношення кліків до показів. (Clicks / Impressions) * 100.
+- CPC (Cost Per Click): вартість одного кліку. Ad Spend / Clicks.
+- CPM (Cost Per Mille): вартість тисячі показів. (Ad Spend * 1000) / Impressions.
+- ROMI (Return on Marketing Investment): рентабельність інвестицій. (Value - Ad Spend) / Ad Spend * 100.
 
 
 Посилання на Дашборд:
